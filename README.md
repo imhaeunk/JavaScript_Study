@@ -1,5 +1,5 @@
 # JavaScript_Study
-> 🌿JS Study with JH; SJ &amp;&amp; HE
+> 🌿JS Study with JH && SJ && HE
 
 ## ⚽️ Goal
 - JS 지식 고도화
