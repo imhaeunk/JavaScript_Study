@@ -1,5 +1,5 @@
 # JavaScript_Study
-> 🌿JS Study with JaeHee &amp;&amp; SeokJeong &amp;&amp; HaEun
+> 🌿JS Study with JH; SJ &amp;&amp; HE
 
 ## ⚽️ Goal
 - JS 지식 고도화
