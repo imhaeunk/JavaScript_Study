@@ -1,0 +1,102 @@
+# 콘솔에 출력, script async 와 defer의 차이점 및 앞으로 자바스크립트 공부 방향
+
+드디어 Hello World 출력하기!!!
+
+main.js에 console.log(’Hello World!’);
+
+[nodejs.org](http://nodejs.org) 사이트에서 node.js 설치 후 프로젝트 파일 내에서 node main.js → Hello World! 출력
+
+![Untitled](%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%89%E1%85%A9%E1%86%AF%E1%84%8B%E1%85%A6%20%E1%84%8E%206eeac/Untitled.png)
+
+(node.js에는 자바스크립트 엔진이 있어서 브라우저 없이도 자바스크립트 실행 가능)
+
+**index.html을 만들어 js와 연결하기**
+
+- **Live Server 사용하기**
+    - VS Code 실행 후 command+shift+x 를 눌러 익스텐션 모드로 들어가기
+    - Live Server 검색 후 Install, VSC 재로딩
+    - 브라우저에서 Cmd + Option + i ( 개발자도구)
+    
+    ![Untitled](%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%89%E1%85%A9%E1%86%AF%E1%84%8B%E1%85%A6%20%E1%84%8E%206eeac/Untitled%201.png)
+    
+- **Console API**
+    - Console은 언어 자체에 포함된 건 아니지만 통상적으로 많이 쓰기 때문에 Web API와 node.js에 공통적으로 포함되어 있어서 똑같은 Console API를 이용해 node.js와 브라우저에서 출력할 수 있음
+    
+
+**자바스크립트의 공식 사이트**
+
+- [ecma-international.org](http://ecma-international.org) - 공식사이트
+- [developer.mozilla.org](http://developer.mozilla.org)  - 대부분의 FE 개발자들이 보는 곳, 여기가 추천!!
+- [w3schools.com](http://w3schools.com) - 노르웨이에 있는 한 회사에서 만든 것
+
+- **스크립트 추가방법**
+    1. **헤더에 포함**
+        
+        ```jsx
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <script src="main.js"></script> //필요한 자바스크립트 파일을 서버에서 다운받아서 이를 실행 한 다음 다시 파싱하는 부분으로 넘어감
+        </head>
+        <body>
+            Hello World!!
+        </body>
+        </html>
+        ```
+        
+        js파일의 사이즈가 커지면 사용자가 웹사이트를 보는 데 많은 시간이 소요가 됨. 
+        
+        따라서스크립트를 헤더에 포함하는 것은 좋은 것이 아님 
+        
+    2. **body 태그 안 가장 끝 부분에 스크립트 추가**
+        - 장점
+            - 기본적인 html 컨텐츠를 빨리 볼 수 있음
+        - 단점
+            - javascript에 의존성이 클 경우 사용자가 의미있는 페이지를 보기까지 오래걸림.
+    3. **head안에 스크립트를 이용하되, asyn 속성값을 사용하는 것.**
+        
+        ```jsx
+        <head>
+            <script asyn src="main.js"></script>
+        </head>
+        ```
+        
+        - 장점
+            - fetching js가 html을 parsing하는 동안 병렬적으로 일어나기 때문에 다운로드 하는 시간을 절약할 수 있다.
+        - 단점
+            - js 실행이 html이 파싱되기 전에 되기 때문에 어떤 것을 조작하려는 시점에 아직 html에 원하는 요소가 아직 정의되어있지 않을 위험이 있음.
+            - 자바스크립트를 실행하기 위해서 멈출 수 있기 때문에 사용자가 페이지를 보는 데 시간이 여전히 걸릴 수 있음
+            - 정의된 스크립트 순서와 상관없이 다운로드가 먼저 된 스크립트를 실행하기 때문에 순서에 의존적인 자바스크립트일 경우 문제가 될 수 있음.
+    4. **head안에 스크립트를 이용하되, defer 속성값을 사용하는 것.**
+        
+        ```jsx
+        <head>
+            <script defer  src="main.js"></script>
+        </head>
+        ```
+        
+        script defer를 보면 다운받아 놓자라는 명령만 실행해두고, 나머지 HTML을 끝까지 실행하고 그 이후 마지막에 자바스크립트를 실행.
+        
+        필요한 스크립트를 다 다운받아 놓은 다음에 순서대로 실행하기 때문에 정의된 스크립트 순서대로 실행할 수 있다!
+        
+        *defer가 가장 좋은 옵션!!
+        
+    
+    **use strict 선언하기!**
+    
+    바닐라자바스크립트를 사용할 때는 꼭 맨위 ‘use strict’를 선언하는 것이 좋다!
+    
+    **WHY?**
+    
+    Javascript는 굉장히 유연한 언어로 만들어졌는데, 유연한 것은  때로는 굉장히 위험할 수 있다.
+    
+    개발자들이 많은 실수를 할 수 있기 때문에 (선언되지 않은 변수에 값을 할당한다던지, 기존에 존재하는 프로토타입을 변겨한다던지..) ECMAScript5에 추가되어있는 ‘use strict’를 사용해 비상식적인 부분들을 막아줄 수 있다.
+    
+    ```jsx
+    'use strict';
+    
+    console.log('Hello World!');
+    ```
