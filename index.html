@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang ="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Document</title>
-        <script src="main.js"></script> <!--js가 크면 이렇게 포함하는거 좋은방법X >> async옵션 사용! >> 다운로드 먼저된 애들이 실행되므로 문제점O
+        <!--head는 웹 브라우저에 표시X, 페이지에 대한 메타데이터를 포함!-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<meta> 메타데이터(데이터를 설명하는 데이터)요소는 항상<head>내부에 위치 -->
+        <!--name 은 메타 요소가 어떤 정보의 형태를 갖고 있는지 알려줌
+        content는 실제 메타데이터의 컨텐츠-->
+            <title>@@Document@@</title>
+        <!--head내의 title은 <h1>과 다름 html문서 전체의 타이틀을 표현!-->
+        <script defer src="main.js"></script> 
+        <!--js가 크면 이렇게 포함하는거 좋은방법X >> async옵션 사용! >> 다운로드 먼저된 애들이 실행되므로 문제점O
                                         >> defer 옵션 사용하면 파싱동안 js 파일 다 다운하고 파싱끝나면 화면 보여줌-->
-        </head>
-        <body></body>
+    </head>
+    <body>
+        <h1>@@hihi@@</h1>
+        <!--h1은 페이지당 한 번씩 사용, 제목이나 헤드라인 표시를 위해 페이지열때 브라우저에 표시-->
+    </body>
 </html>
