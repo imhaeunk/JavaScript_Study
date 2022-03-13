@@ -1,6 +1,6 @@
 # 콘솔에 출력, script async 와 defer의 차이점 및 앞으로 자바스크립트 공부 방향
 
-드디어 Hello World 출력하기!!!
+⭐️드디어 Hello World 출력하기!!!
 
 main.js에 console.log(’Hello World!’);
 
@@ -10,7 +10,7 @@ main.js에 console.log(’Hello World!’);
 
 (node.js에는 자바스크립트 엔진이 있어서 브라우저 없이도 자바스크립트 실행 가능)
 
-**index.html을 만들어 js와 연결하기**
+⭐️**index.html을 만들어 js와 연결하기**
 
 - **Live Server 사용하기**
     - VS Code 실행 후 command+shift+x 를 눌러 익스텐션 모드로 들어가기
@@ -23,7 +23,7 @@ main.js에 console.log(’Hello World!’);
     - Console은 언어 자체에 포함된 건 아니지만 통상적으로 많이 쓰기 때문에 Web API와 node.js에 공통적으로 포함되어 있어서 똑같은 Console API를 이용해 node.js와 브라우저에서 출력할 수 있음
     
 
-**자바스크립트의 공식 사이트**
+⭐️**자바스크립트의 공식 사이트**
 
 - [ecma-international.org](http://ecma-international.org) - 공식사이트
 - [developer.mozilla.org](http://developer.mozilla.org)  - 대부분의 FE 개발자들이 보는 곳, 여기가 추천!!
@@ -85,7 +85,7 @@ main.js에 console.log(’Hello World!’);
         *defer가 가장 좋은 옵션!!
         
     
-    **use strict 선언하기!**
+   ⭐️ **use strict 선언하기!**
     
     바닐라자바스크립트를 사용할 때는 꼭 맨위 ‘use strict’를 선언하는 것이 좋다!
     
