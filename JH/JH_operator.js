@@ -89,3 +89,83 @@ console.log(null == undefined);//true
 console.log(null === undefined); //false
 
 //4강 13:57분부터 듣기 
+//8. if 
+const name = 'coder';
+if(name === 'coder'){
+    console.log('good');
+} else if(name === 'coco'){
+    console.log('ssss');
+} else{
+    console.log('ggg');
+}
+
+//9.ternary operator
+// condition ? value1 : value2 
+console.log(name ==='coder' ? 'yes' : 'no');
+
+//10. switch 
+// else if 많이 반복해서 사용해야할 경우 스위치 사용 권장 
+// 타입스크립트에서는 enum 같은 애들이나 정해진 타입을 검사할 경우 씀
+const browser = 'IE';
+switch(browser){
+    case 'IE' : 
+        console.log('ggg');
+        break;
+    case 'chrome':
+    case 'firefx': 
+        console.log('sss');
+        break;
+    //chrome이랑 firefx 결과 같아서 이렇게 연달아 붙여서 사용 가능
+    default:
+        console.log('ggg');
+        break;
+
+}
+
+//11. while 
+//조건문이 맞을때만 블럭안을 실행
+let i=3;
+while(i > 0) {
+    console.log(`while: ${i}`);
+    i--;
+}
+
+//괄호안(박스안)을 먼저 실행하고 싶으면 do while 사용 
+do {
+    console.log(`while: ${i}`);
+    i--;
+} while(i>0)
+
+//for(begin; condition; step)
+//begin 처음 딱 한 번만 호출하고 블럭 실행전 condition 맞는지 안 맞는지 검사하고 블럭이 다 실행되면 step 실행
+//전역변수도 가능, for 안에서 지역변수 선언도 가능 
+for(let i=0; i<10; i++){
+    for(let j=0; j<10; j++){
+        console.log(`i: ${i}, j:${j}`);
+    }
+}
+
+/*break 루프를 완전히 끝내느 것 
+continue 는 지금거만 스킵하고 다음 스텝으로 넘어감
+
+레이블문 
+레이블은 프로그램에서 다른 곳으로 참조할 수 있도록 식별자 제공
+루프를 식별하기 위해 레이블 사용하고 프로그램이 루프를 방해하거나 실행을 계속할지 여부를 나타내기 위해 break나 continue 문을 사용
+>> 레이블 쓰면 나쁜 냄새가 난다고 함 잘 사용X
+<레이블 문의 구문>
+label :
+   statement
+<예시>특정한 레이블 문을 빠져나옴
+
+labelCancelLoops: while (true) {
+  console.log("Outer loops: ");
+  while (true) {
+    console.log("Inner loops: ");
+    if (3 > 10) {
+      break labelCancelLoops;
+    } else if (15 > 10) {
+      break;
+    }
+  }
+}
+*/
