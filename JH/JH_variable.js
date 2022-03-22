@@ -1,4 +1,4 @@
-
+//구글링시 뒤에 mdn치면 https://developer.mozilla.org/ko/ 로 간다 
 //1. 'use strict';
 
 //2. variable >> read&write (메모리의 값 읽고 쓰기 가능)
@@ -57,7 +57,7 @@ const greeting = 'hello' + char; //string  연결 가능 hello cee
 console.log(`value: ${greeting}, type: ${typeof greeting}`);
 const hello = `hi ${greeting}!`;
 console.log(`value: ${hello}, type: ${typeof hello}`);
-console.log('value: ' + hello + ' type: ' + typeof hello);
+console.log('value: ' + hello + ' type: ' + typeof hello);//(`) backtick
 
 //symbol 은 맵or 자료구조에서 고유한 식별자가 필요하거나 동시에 다발적으로 일어나는 코드에서 우선순위 주고 싶을때 고유한 식별자가 필요할때 사용하는 것 
 //동일한 sting을 썼지만('id') symbol은 다른 타입 
