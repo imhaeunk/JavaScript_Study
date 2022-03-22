@@ -42,10 +42,7 @@ console.log(`or: &{val1 || val2 || check()}`);
 // || or 연산에서 앞에서 true가 나오면 뒤에 실행X 
 // >> check() 같은 무거운 연산이 마지막에 오도록하고 호출하는게 효율적! 
 // && and 도 앞에서 false 나오면 연산 안 한다 
-//>> &&에서 많이 사용하는게 nullableObject 임 오브젝트가 널이면 false라 뒤에가 실행X
-if (nullableObject != null){
-    nullableObject.something
-}
+//>> &&에서 오브젝트가 널이면 false 라 뒤에가 실행X (null은 falsy한 값이기때문에 )
 
 function check(){
     for(let i = 0; i<10; i++){
