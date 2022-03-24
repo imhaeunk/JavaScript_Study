@@ -120,3 +120,34 @@ function randomQuiz(answer, printYes, printNo) {
         printNo();
     }
 }
+//anonymous function
+const printYes = function () {
+    console.log('yes!');
+};
+
+// named function
+// better debugging in debager's stack traces 디버깅 시 함수 보여줌  
+// recursions 재귀호출 시  사용
+const printNo = function print() {
+    console.log('no!');
+}
+
+randomQuiz('wrong', printYes, printNo);
+randomQuiz('love you', printYes, printNo);
+
+
+// Arrow Function
+// always anonymous
+
+const simplePrint = () => console.log('simplePrint!');
+const add = (a, b) => a + b;
+const simpleMultiply = (a, b) => {
+    //do something more
+    return a * b;
+}
+
+//IIFE : Immediately Invoked Function Express
+//함수를 선언함과 동시에 호출
+(function hello() {
+    console.log('IIFE'); 
+})();
