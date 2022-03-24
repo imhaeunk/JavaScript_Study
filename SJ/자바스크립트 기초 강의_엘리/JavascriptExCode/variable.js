@@ -3,7 +3,7 @@
 //use this for Vanila Javascript.
 'use strict';
 
-//2. Variable
+//2. Variable, rw(read/write )
 //let (added in ES6)
 let globalName = 'global name'; 
 {
@@ -26,13 +26,16 @@ console.log(globalName);
 }
 console.log(age);
 
-//3.Constants
+//3.Constant, r(read only)
 //favor Immutable data type for a few reasons:
 // - security
 // - thread safety
 // - reduce human mistakes
 const daysInWeek = 7;
 const maxNumber = 5; 
+
+
+
 
 //4. Variable types
 //primitive, single item : number, string, boolean, null, undefined, symbol 
@@ -90,6 +93,8 @@ console.log(gSymbol1 === gSymbol2 );
 console.log(`value: ${symbol1.description}, type: ${typeof symbol2.description}`);
 
 //object, real-life object, data structure
+//object는 너무 커서 바로 메모리에 할당이 불가하고 object를 reference를 바라보고 있는데 이 ref에 실제 오브젝트의 내용이 담겨 있음. 
+//즉, primitive는  value로 값이 저장되고, object는 object를 가리키는 reference가 메모리에 저장된다.
 //const로 지정했기 때문에 오브젝트 자체는 잠겨있지만, 오브젝트 안의 변수들에 접근했을 때는 다른 값으로 할당이 가능함.
 const seokjeong = { name: 'seokjeong', age: 20 };
 seokjeong.age = 28;
