@@ -100,7 +100,7 @@ console.log(user3); //user3에 user가 할당된거 확인 가능
 const user4 = {};
 Object.assign(user4, user);
 console.log(user4);
-/*
+/* 
 const user4 = Object.assign({}, user);
 console.log(user4);
 이런식으로 작성해도 됨
